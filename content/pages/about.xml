@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/site.xsl"?>
+<page id="page-about">  
+  <heading>About Me</heading>
+    <p>This is where I talk about myself</p>
+</page>

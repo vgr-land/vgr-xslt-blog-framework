@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/site.xsl"?>
+
+<nav>
+  <page id="page-home">
+    <title>Home</title>
+    <description>All you care to know about the vgr xslt garbage blog framework</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/home.xml</link>                        
+  </page>
+  <page id="page-about">
+    <title>About</title>
+    <description>Do you really want to know?</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/about.xml</link>                
+  </page>
+  <page id="page-blog">
+    <title>Blog</title>
+    <description>Cool things that have been written</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/blog.xml</link>        
+  </page>
+  <page id="page-topics">
+    <title>Topics</title>
+    <description>Cool things that have been written</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/topics.xml</link>        
+  </page>  
+  <page id="page-template">
+    <title>Template</title>
+    <description>See all the styles in action</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/template.xml</link>
+  </page>
+  <page id="page-faq">
+    <title>FAQ</title>
+    <description>Frequently Asked Questions</description>
+    <link>https://xsltblogdemo.vgr.land/content/pages/faq.xml</link>
+  </page>      
+</nav>

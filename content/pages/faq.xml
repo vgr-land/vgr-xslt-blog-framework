@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../xslt/site.xsl"?>
+<page id="page-faq">  
+  <heading>FAQ</heading>
+  <blockquote>
+    This section was not written by an LLM because I want people to read it. Maybe you'll get a chuckle too. Take this as documentation of what I've learned and the insane questions I've had to answer to get this all to work. 
+  </blockquote>  
+  <details>
+      <summary>How does this all work?</summary>
+      <p>First, let's ask <a href="https://www.w3.org/TR/xslt-10/#section-Introduction" target="_blank">W3C</a>
+       how this works</p>
+      <img src="../assets/pages/faq/wtfw3.png"/>
+      <p>Very helpful W3. I tried to read this page several times and got lost. Thankfully we live in the age of LLMs and I can set my brain on cruise control. So I vibe coded for a while, burned down a rain forest, and came out with garbage that kinda works. </p>
+      <p>That was version one of this site. So then, it didn't work on mobile and I didn't have a fucking clue why. So I rewrote it half by hand half by LLM. </p>
+      <p>Still, there are a bunch of fun error states that I can't figure out how to trace. You'll know you broke the template when you go to load the page after a change and it just freezes, or doesn't load anything.</p>
+      <p>In general I learned to make sure the code is following the 1.0 spec and make sure your tags are complete. This isn't html... one bad tag and you're toast. Finally I learned LLMs as of 2025 do a shit job at troubleshooting the full stylesheet template. </p>
+      <p>The best LLM technique I found was to get a working section of code, then ask the LLM how to expand on it. I had to blow away my context every 10-15 prompts or so or the XML would start breaking its output.</p>
+      <p>So how does this all work? Basically, there are 3 files that matter</p>
+      <ul>
+        <li>site.xsl</li>
+        <li>pages.xml</li>
+        <li>posts.xml</li>
+      </ul>
+      <p>I'll detail each one separately. </p>
+    </details>
+    <details>
+      <summary>What does site.xsl do?</summary>
+      <p>This is your main style sheet. The monolith of code. No decomposing here. No microservices. This is coding the way it was meant to be. If you can't find it, get good at grep.</p>
+      <img src="../assets/pages/faq/xslsimple.png"/>
+      <p>If you collapse the templates in an IDE you'll see that it's not too bad to read. There's some global variables up at the top. There's a key I use to extract the year from blog posts for the menu. Then the templates.</p>
+      <ul>
+        <li><code>template /</code> This is the root template that builds the site. It loads HEAD and BODY. It does that by rendering other templates. Also, I put a bit of effort in getting metadata populated. but guess what it doesn't matter. I probably should have moved that to a global variable, but when I realized metadata doesn't matter, I moved on. More on that in <strong>WTF METADATA</strong></li>
+        <li><code>template render-css</code> This contains all the CSS for the site. If you want to make a new theme, here it is. Although the javascript and buttons are inside <code>template render</code></li>
+        <li><code>template render</code> This is where the site gets laid out and built. The menu logic is here. The theme buttons are here. The stuff to load other pages into the body are here. Its all here.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>What does pages.xml do?</summary>
+      <p>This is pretty simple. The site has two types of pages (and a special one). Pages are long lived static pages most sites have. To add a new page, copy one of the existing blocks, update the fields and copy one of the existing pages (except <code>blog.xml</code>) and rename it after the id value you set inside <code>./pages/</code>. Make sure to update the ID value in the new page file. Then, our good friend <abbr title="Extensible Stylesheet Language Transformations">XSLT</abbr> does the rest, such as adding it to the menu, applying style sheets, etc. </p>
+    </details>
+    <details>
+      <summary>What does posts.xml do?</summary>
+      <p>This page is pulling double duty. First it's the index for all of the blog posts. Add a new post here, add the file, and our good friend <abbr title="Extensible Stylesheet Language Transformations">XSLT</abbr> does the rest. Just like <code>pages.xml</code>. However! posts.xml is <strong>VERY SPECIAL</strong>. Its secret is it's also an RSS compatible index. This means if you add a new blog here, with all the correct fields, RSS readers will automagic pick up your new post. If you don't believe me check <a href="https://validator.w3.org/feed/" target="_blank">w3</a>. That's why the date is such an odd format and not ISO 8601 like god intended. </p>
+    </details>
+    <details>
+      <summary>How do tagged topics work?</summary>
+      <p><code>posts.xml</code> continues to do heavy lifting. We're able to remain RSS spec compliant and have tags by adding a category tag for each item in posts.xml. This is explained by w3 <a href="https://www.w3schools.com/XML/rss_tag_category_item.asp" target="_blank">here</a>. XSLT then does some parsing and alphabetization through code I barely understand and poof multi topic blogs are covered. </p>
+    </details>    
+    <details>
+      <summary>What to do with media</summary>
+      <p>You can technically do whatever you want. I'm not your dad. I don't actually care. The framework has an assets folder, where pages and posts are split apart, then a folder per page or post. The reason being is that's how I like to do it. Don't like it, well, whatever keep it in S3, put it in cloudfront, whatever. It'll probably be fine XSLT seems to go with the flow most of the time</p>
+    </details>
+    <details>
+      <summary>WTF METADATA</summary>
+      <p>One of the coolest things about using someone else's browser as your build system is you don't have to think about it. But, it also means your pages don't exist as HTML until the moment they're requested...</p>
+      <p>It turns out that this matters alot for SEO crawlers and for metadata to make rich links work in messenger, discord, etc.</p>
+      <p>After a ton of time troubleshooting, and realizing I was asking the impossible, it turns out the only way to have metadata in the head of the file, is to use HTML. But we're not. We're rendering HTML. We're all in on XML and we like it.</p>
+      <p>So if you're going to use this framework you're signing up for the depths of ungoogle'd. No SEO engine will take your site and suggest it to people in their search engine. Ultimately I think this is fine going into the future. Current SEO techniques are more and more <a href="https://housefresh.com/beware-of-the-google-ai-salesman/" target="_blank">broken and monetized.</a> </p>
+      <p>These days I'm not sure it matters, LLMs are everywhere taking everyone's data and reshaping how we use the internet. Although, it makes me wonder. If this breaks SEO, does it break LLMs? Will this be like throwing pocket sand into the LLM machine.</p>
+      <p>Big maybe! if it turns out that because the site doesn't exist until the DOM loads it, and bots don't load the DOM, maybe this is LLM resistant...</p>
+    </details>
+
+
+</page>

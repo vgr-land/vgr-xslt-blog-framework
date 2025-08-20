@@ -1,0 +1,35 @@
+# ── macOS system files ───────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+# Thumbnails
+._*
+__MACOSX/
+
+# ── Windows system files ────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ── Certificate & key files ─────────────────────────────────
+# Public and private keys, CSRs, keystores
+*.pem
+*.key
+*.csr
+*.crt
+*.der
+*.p12
+*.pfx
+*.jks
+
+# ── Mobile configuration profiles ────────────────────────────
+*.mobileconfig
+
+# ── tar Files ────────────────────────────
+*.tar.gz
+
+# ── Private keys ───────────────────────────────────────
+private_keys/

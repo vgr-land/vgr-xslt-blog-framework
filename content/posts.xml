@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <!-- Template Change This -->
+    <title>vgr's xslt blog framework demo</title>
+    <link>https://xsltblogdemo.vgr.land</link>
+    <atom:link href="https://xsltblogdemo.vgr.land/content/posts.xml" rel="self" type="application/rss+xml" />    
+    <description>Demo site showing off how xslt can be a blog framework</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jul 2025 14:30:00 +0000</lastBuildDate>
+    <pubDate>Sat, 12 Jul 2025 14:30:00 +0000</pubDate>
+    <ttl>60</ttl> <!-- time to live in minutes -->
+    <!-- Template Don't Change -->
+    <docs>http://www.rssboard.org/rss-specification</docs>    
+    <generator>vgr's XSLT blog framework 1.0</generator>    
+
+    <!-- Blog Posts -->
+    <item>
+      <title>Last Blog Post</title>
+      <description>
+        I am Jack's XML Parser. I consume unclosed tags I kill jack.
+      </description>
+      <link>https://demo.vgrsec.com/content/posts/20250707.xml</link>
+      <guid isPermaLink="false">post-20250707</guid>
+      <pubDate>Mon, 7 Jul 2025 13:00:00 +0000</pubDate>
+      <author>vgr.xsltbf@example.com (vgr)</author>
+      <category>Topic 1</category>
+      <category>Alpha</category>
+    </item>
+
+    <!-- Second item -->
+    <item>
+      <title>First Post</title>
+      <description>
+        How I Learned to Stop Worrying and Love XML
+      </description>
+      <link>https://demo.vgrsec.com/content/posts/20240101.xml</link>
+      <guid isPermaLink="false">post-20240101</guid>
+      <pubDate>Mon, 01 Jan 2024 16:45:00 +0000</pubDate>
+      <author>vgr.xsltbf@example.com (vgr)</author>  
+      <category>Topic 3</category>
+      <category>Alpha</category>              
+    </item>
+  </channel>
+</rss>
