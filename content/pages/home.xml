@@ -10,6 +10,7 @@
 
       <p>So, this framework probably works just fine. I mostly don't understand the inner workings of this framework because ChatGPT vibed with me for a few days... so I'm logging a bunch to console. Either way, you're welcome, and I'm sorry, for this.  <output name="vgr">vgr</output></p>
       <p>
+        <a href="https://vgr.land/content/posts/20250821.xml" target="_blank">Blog - https://vgr.land/content/posts/20250821.xml</a><br/>
         <a href="https://xsltblogdemo.vgr.land" target="_blank">
           Demo - https://xsltblogdemo.vgr.land</a><br/>
         <a href="https://github.com/vgr-land/vgr-xslt-blog-framework" target="_blank">Code - https://github.com/vgr-land/vgr-xslt-blog-framework</a>
@@ -20,6 +21,9 @@
       <p>For more info see <a href="./faq.xml">FAQ</a></p>
       <p>To use this framework for blogging.
         <ul>
+          <li>Add <code>.htaccess<code> to your webserver to prevent clients from caching content. This is so if you update your site, it updates between clicks</li>
+          <li>Update the site metadata in <code>./xslt/site.xsl</code> to meet your needs </li>
+          <li>Update the rss metadata at the top of <code>./content/posts.xml</code></li>
           <li>Record a blog entry in <code>./content/posts.xml</code></li>
             <pre><code>&lt;item&gt;
   &lt;title&gt;Last Blog Post&lt;/title&gt;

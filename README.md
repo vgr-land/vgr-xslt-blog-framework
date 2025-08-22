@@ -8,6 +8,7 @@ This all started when somebody sent me some cool [code](https://github.com/pacoc
 
 So, this framework probably works just fine. I mostly don't understand the inner workings of this framework because ChatGPT vibed with me for a few days... so I'm logging a bunch to console. Either way, you're welcome, and I'm sorry, for this. `vgr`
 
+[Blog Writeup - https://vgr.land/content/posts/20250821.xml](https://vgr.land/content/posts/20250808.xml)
 [Demo - https://xsltblogdemo.vgr.land](https://xsltblogdemo.vgr.land)  
 [Code - https://github.com/vgr-land/vgr-xslt-blog-framework](https://github.com/vgr-land/vgr-xslt-blog-framework)
 
@@ -16,6 +17,12 @@ So, this framework probably works just fine. I mostly don't understand the inner
 For more info see [FAQ](./faq.xml)
 
 To use this framework for blogging:
+
+- Add `.htaccess` to your webserver to prevent clients from caching content. This is so if you update your site, it updates between clicks
+
+- Update the site metadata in `./xslt/site.xsl` to meet your needs 
+
+- Update the rss metadata at the top of `./content/posts.xml`
 
 - Record a blog entry in `./content/posts.xml`
   ```xml

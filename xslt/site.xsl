@@ -60,13 +60,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />        
         <meta property="og:locale" content="en_US"/>
-        <meta property="og:site_name" content="VGR Garbage Web Framework Demo"/>
+        <meta property="og:site_name" content="VGR XSLT Blog Framework Demo"/>
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://demo.vgrsec.com/content/assets/metadata/metadata.gif" />
+        <meta property="og:image" content="https://xsltblogdemo.vgr.land/content/assets/metadata/metadata.gif" />
         <meta property="og:image:type" content="image/gif" />
         <meta property="og:image:width" content="225" />
         <meta property="og:image:height" content="127" />
-        <meta property="og:video" content="https://demo.vgrsec.com/content/assets/metadata/metadata.mp4" />
+        <meta property="og:video" content="https://xsltblogdemo.vgr.land/content/assets/metadata/metadata.mp4" />
         <meta property="og:video:type" content="video/mp4" />
         <meta property="og:video:width" content="225" />
         <meta property="og:video:height" content="127" />  
@@ -118,20 +118,20 @@
           "url": "<xsl:value-of select='$current/link'/>",
           "headline": "<xsl:value-of select='$current/title'/>",
           "description": "<xsl:value-of select='$current/description'/>",
-          "image": "https://demo.vgrsec.com/content/assets/metadata/metadata.png",
+          "image": "https://xsltblogdemo.vgr.land/content/assets/metadata/metadata.png",
           "datePublished": "<xsl:value-of select='normalize-space($current/pubDate)'/>",
           "dateModified": "<xsl:value-of select='normalize-space($current/modifiedDate)'/>",
           "author": {
             "@type": "Person",
             "name": "<xsl:value-of select='$current/author'/>",
-            "url": "https://demo.vgrsec.com/authors/<xsl:value-of select='$current/authorId'/>"
+            "url": "https://xsltblogdemo.vgr.land/authors/<xsl:value-of select='$current/authorId'/>"
           },
           "publisher": {
-            "@type": "VGR GBF",
-            "name": "VGR Garbage Web Framework Demo",
+            "@type": "VGR XSLT Blog Framework",
+            "name": "VGR XSLT Blog Framework Demo",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://demo.vgrsec.com/content/assets/logo.png"
+              "url": "https://xsltblogdemo.vgr.land/content/assets/logo.png"
             }
           },
           "breadcrumb": {
@@ -164,8 +164,8 @@
             ]
           },
           "keywords": [
-            "VGR GBF",
-            "garbage blog framework",
+            "VGR XSLT Blog Framework",
+            "XSLT blog framework",
             "XSLT 1.0",
             "zero-JavaScript",
             "ultra-lightweight",
@@ -396,6 +396,8 @@
         line-height:  1.4;
         overflow-x:   hidden;
         transition:   background 0.3s, color 0.3s;
+        overflow-wrap: anywhere;
+        word-break: break-word;           
       }
 
       /* Links */
@@ -1431,7 +1433,7 @@
           </main>
         </div>
           <footer class="headfoot_container">
-            <p>Authored by <a href="https://www.vgrsec.com" target="_blank">vgr<br/></a> Published under <a href="https://mit-license.org/" target="_blank">MIT License</a> <br/>
+            <p>Authored by <a href="https://www.vgr.land" target="_blank">vgr<br/></a> Published under <a href="https://mit-license.org/" target="_blank">MIT License</a> <br/>
               <a href="../posts.xml" target="_blank" title="Subscribe via RSS" aria-label="RSS feed" 
               style="display: 
               inline-flex; 
@@ -1447,9 +1449,9 @@
                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                 <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
               </svg>
-              <span class="visually-hidden">RSS</span>
+              <span class="visually-hidden"></span>
             </a><br/>
-            <citation>Powered by <a href="https://github.com/vgrsec/vgr-xslt-garbage-blog-framework" target="_blank">vgr's garbage blog framework 1.2</a></citation>
+            <citation>Powered by <a href="https://github.com/vgr-land/vgr-xslt-blog-framework" target="_blank">vgr's xslt blog framework 1.2</a></citation>
             </p>
           </footer>
 
