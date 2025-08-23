@@ -21,7 +21,7 @@
       <p>For more info see <a href="./faq.xml">FAQ</a></p>
       <p>To use this framework for blogging.
         <ul>
-          <li>Add <code>.htaccess<code> to your webserver to prevent clients from caching content. This is so if you update your site, it updates between clicks</li>
+          <li>Add <code>.htaccess</code> to your webserver to prevent clients from caching content. This is so if you update your site, it updates between clicks</li>
           <li>Update the site metadata in <code>./xslt/site.xsl</code> to meet your needs </li>
           <li>Update the rss metadata at the top of <code>./content/posts.xml</code></li>
           <li>Record a blog entry in <code>./content/posts.xml</code></li>
